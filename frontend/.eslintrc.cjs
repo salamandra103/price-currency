@@ -34,6 +34,7 @@ module.exports = {
       {
         endOfLine: 'auto'
       }
-    ]
+    ],
+    'no-console': 2
   }
 };
