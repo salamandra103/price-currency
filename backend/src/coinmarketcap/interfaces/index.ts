@@ -16,3 +16,19 @@ export interface Cryptocurrency {
   first_historical_data: string;
   last_historical_data: string;
 }
+
+export interface FiatMapQueryGet {
+  start: number;
+  limit: number;
+  sort: string;
+  include_metals: boolean;
+}
+
+export interface CryptocurrentcyMapQueryGet {
+  listing_status: string;
+  start: number;
+  limit: number;
+  sort: string;
+  symbol: string;
+  aux: string;
+}

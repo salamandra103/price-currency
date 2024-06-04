@@ -2,15 +2,18 @@ import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
 import { firstValueFrom, catchError } from 'rxjs';
 import { AxiosError } from 'axios';
-import { GetFiatMapDto } from './dto/get-fiat-map.dto';
-import { GetCryptocurrentcyMapDto } from './dto/get-cryptocurrentcy-map.dto';
-import { Fiat, Cryptocurrency } from './interfaces';
+import {
+  Fiat,
+  Cryptocurrency,
+  FiatMapQueryGet,
+  CryptocurrentcyMapQueryGet,
+} from './interfaces';
 import { API_KEY } from './constants';
 
 @Injectable()
 export class CoinmarketcapService {
   constructor(private readonly httpService: HttpService) {}
-  async getFiatMap(params: GetFiatMapDto): Promise<Fiat[]> {
+  async getFiatMap(params: FiatMapQueryGet): Promise<Fiat[]> {
     const {
       data: { data },
     } = await firstValueFrom(
@@ -35,7 +38,7 @@ export class CoinmarketcapService {
   }
 
   async getCryptocurrencyMap(
-    params: GetCryptocurrentcyMapDto,
+    params: CryptocurrentcyMapQueryGet,
   ): Promise<Cryptocurrency[]> {
     const {
       data: { data },

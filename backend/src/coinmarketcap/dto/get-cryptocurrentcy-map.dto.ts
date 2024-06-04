@@ -1,4 +1,4 @@
-export class GetCryptocurrentcyMapDto {
+export class CryptocurrentcyMapGetDto {
   listing_status: string = 'active';
   start: number = 1;
   limit: number;

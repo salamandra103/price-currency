@@ -1,4 +1,4 @@
-export class GetFiatMapDto {
+export class FiatMapGetDto {
   start: number = 1;
   limit: number;
   sort: string = 'id';
